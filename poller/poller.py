@@ -1,0 +1,221 @@
+"""
+poller.py — Loop principale del sistema di monitoraggio tempi di attesa.
+Ogni 30 minuti recupera i dati live da themeparks.wiki e li salva su PostgreSQL.
+Progettato per girare H24 su Railway senza mai crashare.
+
+La configurazione dei parchi è nella cartella parks/: un file JSON per parco.
+Ogni JSON contiene la lista delle attrazioni da monitorare (formato API themeparks.wiki).
+Per aggiungere un parco, basta aggiungere un nuovo .json nella cartella.
+"""
+
+import json
+import time
+import logging
+import sys
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Carica il file .env dalla root del progetto (una cartella sopra poller/)
+load_dotenv(Path(__file__).parent.parent / ".env")
+
+# Importa i moduli del poller
+from fetcher import get_live_data, parse_attraction, parse_show
+from db import ensure_schema, insert_wait_time, insert_show_schedule, get_connection
+from alerts import check_and_alert, send_cycle_summary
+
+# Configurazione logging — stdout per Railway
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger("poller")
+
+# Intervallo tra i cicli di polling (30 minuti in secondi)
+POLLING_INTERVAL = 30 * 60  # 1800 secondi
+
+
+def load_parks() -> list:
+    """
+    Carica tutti i file JSON dalla cartella 'parks/'.
+    Ogni file rappresenta un parco con le sue entity nel formato API themeparks.wiki.
+    Separa le entity in ATTRACTION e SHOW per processarle diversamente.
+    
+    Returns:
+        Lista di dizionari con: park_id, park_name, attraction_ids, show_ids
+    """
+    parks_dir = Path(__file__).parent / "parks"
+    
+    if not parks_dir.exists():
+        logger.error(f"Cartella parks/ non trovata in {parks_dir}")
+        return []
+    
+    parks = []
+    for json_file in sorted(parks_dir.glob("*.json")):
+        try:
+            with open(json_file, "r", encoding="utf-8") as f:
+                park_data = json.load(f)
+            
+            park_id = park_data["id"]
+            park_name = park_data["name"]
+            
+            # Separiamo ATTRACTION da SHOW
+            attraction_ids = []
+            show_ids = []
+            for entity in park_data.get("liveData", []):
+                entity_type = entity.get("entityType", "ATTRACTION")
+                if entity_type == "SHOW":
+                    show_ids.append(entity["id"])
+                else:
+                    attraction_ids.append(entity["id"])
+            
+            parks.append({
+                "park_id": park_id,
+                "park_name": park_name,
+                "attraction_ids": attraction_ids,
+                "show_ids": show_ids
+            })
+            
+            logger.info(
+                f"Caricato: {park_name} — "
+                f"{len(attraction_ids)} attrazioni, {len(show_ids)} show "
+                f"(da {json_file.name})"
+            )
+        except Exception as e:
+            logger.error(f"Errore nel caricamento di {json_file.name}: {e}")
+            continue
+    
+    total_attr = sum(len(p["attraction_ids"]) for p in parks)
+    total_show = sum(len(p["show_ids"]) for p in parks)
+    logger.info(f"Totale: {len(parks)} parchi, {total_attr} attrazioni, {total_show} show")
+    return parks
+
+
+def run_cycle(parks: list):
+    """
+    Esegue un singolo ciclo di polling:
+    - Per ogni parco, recupera i dati live dall'API
+    - Per le ATTRACTION: salva wait_minutes nella tabella wait_times
+    - Per gli SHOW: salva/aggiorna gli showtimes nella tabella show_schedules
+    
+    Args:
+        parks: Lista di configurazioni parco [{park_id, park_name, attraction_ids, show_ids}]
+    """
+    for park in parks:
+        park_id = park["park_id"]
+        park_name = park["park_name"]
+        attraction_ids = park["attraction_ids"]
+        show_ids = park["show_ids"]
+        
+        try:
+            logger.info(f"Recupero dati live per: {park_name}")
+            live_data = get_live_data(park_id)
+            
+            if live_data is None:
+                logger.warning(f"Nessun dato ricevuto per {park_name}, salto al prossimo parco")
+                continue
+            
+            # --- Processiamo le ATTRACTION ---
+            inserted = 0
+            skipped = 0
+            conn = get_connection()
+            for attr_id in attraction_ids:
+                try:
+                    record = parse_attraction(live_data, attr_id, park_name)
+                    if record is not None:
+                        insert_wait_time(record)
+                        # Controlla se mandare alert Telegram (coda bassa)
+                        check_and_alert(conn, record)
+                        inserted += 1
+                    else:
+                        skipped += 1
+                except Exception as e:
+                    logger.error(f"Errore attraction {attr_id}: {e}", exc_info=True)
+                    continue
+            
+            logger.info(f"{park_name} ATTRAZIONI: {inserted} inserite, {skipped} non trovate")
+            
+            # --- Processiamo gli SHOW ---
+            shows_ok = 0
+            shows_skip = 0
+            for show_id in show_ids:
+                try:
+                    show_record = parse_show(live_data, show_id, park_name)
+                    if show_record is not None and show_record.get("showtimes"):
+                        insert_show_schedule(show_record)
+                        shows_ok += 1
+                    else:
+                        shows_skip += 1
+                except Exception as e:
+                    logger.error(f"Errore show {show_id}: {e}", exc_info=True)
+                    continue
+            
+            logger.info(f"{park_name} SHOW: {shows_ok} processati, {shows_skip} senza orari")
+                    
+        except Exception as e:
+            logger.error(
+                f"Errore nel recupero dati per {park_name}: {e}",
+                exc_info=True
+            )
+            continue
+
+
+def main():
+    """
+    Entry point del poller. Ciclo infinito:
+    1. Carica configurazione dai JSON nella cartella parks/
+    2. Verifica/crea schema DB
+    3. Esegue polling ogni 30 minuti
+    """
+    logger.info("=" * 60)
+    logger.info("Avvio Disneyland Paris Wait Time Monitor — Poller")
+    logger.info("=" * 60)
+    
+    # Carica la configurazione di tutti i parchi dalla cartella parks/
+    parks = load_parks()
+    
+    if not parks:
+        logger.error("Nessun parco caricato. Verifica la cartella poller/parks/")
+        logger.info("Il poller continuerà a tentare nei prossimi cicli...")
+    
+    # Verifica/crea lo schema del database
+    try:
+        ensure_schema()
+        logger.info("Schema database pronto")
+    except Exception as e:
+        logger.error(f"Errore nella creazione dello schema DB: {e}", exc_info=True)
+        logger.info("Il poller continuerà a tentare nei prossimi cicli...")
+    
+    # Loop infinito di polling
+    cycle_count = 0
+    while True:
+        cycle_count += 1
+        logger.info(f"--- Inizio ciclo #{cycle_count} ---")
+        
+        try:
+            run_cycle(parks)
+            # Invia sommario Telegram (se configurato)
+            try:
+                conn = get_connection()
+                send_cycle_summary(conn, parks)
+            except Exception:
+                pass
+            logger.info(
+                f"Ciclo #{cycle_count} completato con successo. "
+                f"Prossimo ciclo fra {POLLING_INTERVAL // 60} minuti."
+            )
+        except Exception as e:
+            # Errore inatteso a livello di ciclo — non deve mai crashare
+            logger.error(
+                f"Errore inatteso nel ciclo #{cycle_count}: {e}",
+                exc_info=True
+            )
+            logger.info("Il poller continuerà al prossimo ciclo...")
+        
+        # Attesa fino al prossimo ciclo
+        time.sleep(POLLING_INTERVAL)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,842 @@
+{
+  "id": "ca888437-ebb4-4d50-aed2-d227f7096968",
+  "name": "Disney Adventure World",
+  "entityType": "PARK",
+  "timezone": "Europe/Paris",
+  "liveData": [
+    {
+      "id": "56792af8-c0e3-4b5a-a1ce-556a737cbdc0",
+      "name": "Disney Marching Band",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS72",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:30:00+02:00",
+          "startTime": "2026-06-16T12:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:30:00+02:00",
+          "startTime": "2026-06-16T13:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:15:00+02:00",
+          "startTime": "2026-06-16T16:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:20:00+02:00",
+          "startTime": "2026-06-16T17:20:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T18:20:00+02:00",
+          "startTime": "2026-06-16T18:20:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "e3b0aefc-5834-4275-9e6c-d97b8ee71a6b",
+      "name": "Frozen: A Musical Invitation",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS23",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T10:30:00+02:00",
+          "startTime": "2026-04-01T10:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T11:15:00+02:00",
+          "startTime": "2026-04-01T11:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T12:00:00+02:00",
+          "startTime": "2026-04-01T12:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T12:45:00+02:00",
+          "startTime": "2026-04-01T12:45:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T13:30:00+02:00",
+          "startTime": "2026-04-01T13:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T14:15:00+02:00",
+          "startTime": "2026-04-01T14:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T15:00:00+02:00",
+          "startTime": "2026-04-01T15:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T15:45:00+02:00",
+          "startTime": "2026-04-01T15:45:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T16:30:00+02:00",
+          "startTime": "2026-04-01T16:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T17:15:00+02:00",
+          "startTime": "2026-04-01T17:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T18:00:00+02:00",
+          "startTime": "2026-04-01T18:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-01T18:45:00+02:00",
+          "startTime": "2026-04-01T18:45:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-04-25T21:34:18Z"
+    },
+    {
+      "id": "27cafc7d-b0dc-4531-98e0-9fe2ab675ef5",
+      "name": "Doctor Strange: Mystery of the Mystics!",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS63",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-02-28T19:30:00+01:00",
+          "startTime": "2026-02-28T19:30:00+01:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-02-28T20:15:00+01:00",
+          "startTime": "2026-02-28T20:15:00+01:00"
+        }
+      ],
+      "lastUpdated": "2026-04-25T21:34:18Z"
+    },
+    {
+      "id": "2c51b641-2398-4833-8e1a-346fd7fe09db",
+      "name": "Disney Cascade of Lights",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2DS00",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T22:40:00+02:00",
+          "startTime": "2026-06-16T22:40:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "0f5cce1d-69ed-4fad-9505-a1914dd150cb",
+      "name": "Mickey and the Magician",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2YS08",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-14T13:00:00+02:00",
+          "startTime": "2026-06-14T13:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-14T14:05:00+02:00",
+          "startTime": "2026-06-14T14:05:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-14T15:10:00+02:00",
+          "startTime": "2026-06-14T15:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-14T17:25:00+02:00",
+          "startTime": "2026-06-14T17:25:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-14T18:30:00+02:00",
+          "startTime": "2026-06-14T18:30:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-13T22:02:09Z"
+    },
+    {
+      "id": "337bce77-57bd-49c7-83d7-662f16c162ea",
+      "name": "Slinky® Dog Zigzag Spin",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA08",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-05-31T20:41:20Z"
+    },
+    {
+      "id": "f0d4b531-e291-471b-9527-00410c2bbd65",
+      "name": "Crush's Coaster",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA03",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 80
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 50
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1600,
+            "currency": "EUR",
+            "formatted": "16,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T19:55:00+02:00",
+          "returnStart": "2026-06-16T18:55:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:29Z"
+    },
+    {
+      "id": "73e1c590-ef8f-496c-bf6c-d7e7fde0c7df",
+      "name": "Ratatouille : L’Aventure Totalement Toquée de Rémy​",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA09",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 65
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 25
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1200,
+            "currency": "EUR",
+            "formatted": "12,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T21:25:00+02:00",
+          "returnStart": "2026-06-16T20:25:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:29Z"
+    },
+    {
+      "id": "652558c2-9f2d-488c-8e1b-57c284e3e836",
+      "name": "Reserved Viewing Area : Disney Cascade of Lights",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2RV00",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T22:40:00+02:00",
+          "startTime": "2026-06-16T22:40:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "9592508c-2b5b-48b1-965d-bcf1f2950ac6",
+      "name": "Entry to World of Frozen",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2EA02",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-04-17T20:41:45Z"
+    },
+    {
+      "id": "d2ec9363-a215-4904-b297-b66734ea9a00",
+      "name": "The Twilight Zone Tower of Terror",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2ZA02",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 30
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1200,
+            "currency": "EUR",
+            "formatted": "12,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T14:20:00+02:00",
+          "returnStart": "2026-06-16T13:20:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:08Z"
+    },
+    {
+      "id": "6fe2bf7a-cbe4-4995-978c-5cf0cf90fc77",
+      "name": "Musical Moment with Rapunzel and Flynn",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS73",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T09:40:00+02:00",
+          "startTime": "2026-06-16T09:40:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T10:35:00+02:00",
+          "startTime": "2026-06-16T10:35:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:30:00+02:00",
+          "startTime": "2026-06-16T11:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:50:00+02:00",
+          "startTime": "2026-06-16T13:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:55:00+02:00",
+          "startTime": "2026-06-16T14:55:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "449a20d8-9bfd-4b2b-b437-38a279aa8d88",
+      "name": "Cars ROAD TRIP",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA00",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-06-07T19:11:48Z"
+    },
+    {
+      "id": "15bad9c3-8378-4ac5-ab90-2f8d0ee09d26",
+      "name": "RC Racer",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA06",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 55
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 45
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:46:20Z"
+    },
+    {
+      "id": "72d20d9c-1f46-4866-b9b9-b428d0aaf6e8",
+      "name": "TOGETHER: a Pixar Musical Adventure",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS58",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:15:00+02:00",
+          "startTime": "2026-06-16T11:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:25:00+02:00",
+          "startTime": "2026-06-16T12:25:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:35:00+02:00",
+          "startTime": "2026-06-16T13:35:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:40:00+02:00",
+          "startTime": "2026-06-16T15:40:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:50:00+02:00",
+          "startTime": "2026-06-16T16:50:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "630e2675-f9fc-4984-ba83-03daf5fc89ed",
+      "name": "Frozen Ever After",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2EA00",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 100
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 55
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1600,
+            "currency": "EUR",
+            "formatted": "16,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T21:00:00+02:00",
+          "returnStart": "2026-06-16T20:00:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:08Z"
+    },
+    {
+      "id": "3bdddd5f-6ec1-4143-a915-2e95b2fa275f",
+      "name": "Animation Academy",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS54",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T10:30:00+02:00",
+          "startTime": "2026-06-16T10:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:00:00+02:00",
+          "startTime": "2026-06-16T11:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:30:00+02:00",
+          "startTime": "2026-06-16T11:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:00:00+02:00",
+          "startTime": "2026-06-16T12:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:30:00+02:00",
+          "startTime": "2026-06-16T12:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:00:00+02:00",
+          "startTime": "2026-06-16T13:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:30:00+02:00",
+          "startTime": "2026-06-16T13:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:00:00+02:00",
+          "startTime": "2026-06-16T14:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:30:00+02:00",
+          "startTime": "2026-06-16T14:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:00:00+02:00",
+          "startTime": "2026-06-16T15:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:30:00+02:00",
+          "startTime": "2026-06-16T15:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:00:00+02:00",
+          "startTime": "2026-06-16T16:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:30:00+02:00",
+          "startTime": "2026-06-16T16:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:00:00+02:00",
+          "startTime": "2026-06-16T17:00:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "cd486865-9d66-4860-8111-303b3f56c71f",
+      "name": "Minnie’s Dream Factory",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS33",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:00:00+02:00",
+          "startTime": "2026-06-16T12:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:00:00+02:00",
+          "startTime": "2026-06-16T13:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:00:00+02:00",
+          "startTime": "2026-06-16T14:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:20:00+02:00",
+          "startTime": "2026-06-16T16:20:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:20:00+02:00",
+          "startTime": "2026-06-16T17:20:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "ff2e7d6f-5aaf-47b8-8695-53a66e9fe073",
+      "name": "Avengers Assemble: Flight Force",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2AC01",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 55
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 45
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 900,
+            "currency": "EUR",
+            "formatted": "9,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T13:10:00+02:00",
+          "returnStart": "2026-06-16T12:10:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:29Z"
+    },
+    {
+      "id": "f2a48cc2-4dc3-47fd-9992-0c30eeba24f0",
+      "name": "Stitch Live!",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2YS03",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T10:30:00+02:00",
+          "startTime": "2026-04-06T10:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T10:50:00+02:00",
+          "startTime": "2026-04-06T10:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T11:10:00+02:00",
+          "startTime": "2026-04-06T11:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T11:30:00+02:00",
+          "startTime": "2026-04-06T11:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T11:50:00+02:00",
+          "startTime": "2026-04-06T11:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T12:10:00+02:00",
+          "startTime": "2026-04-06T12:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T12:30:00+02:00",
+          "startTime": "2026-04-06T12:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T12:50:00+02:00",
+          "startTime": "2026-04-06T12:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T13:10:00+02:00",
+          "startTime": "2026-04-06T13:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T13:30:00+02:00",
+          "startTime": "2026-04-06T13:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T13:50:00+02:00",
+          "startTime": "2026-04-06T13:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T14:10:00+02:00",
+          "startTime": "2026-04-06T14:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T14:30:00+02:00",
+          "startTime": "2026-04-06T14:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T14:50:00+02:00",
+          "startTime": "2026-04-06T14:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T15:10:00+02:00",
+          "startTime": "2026-04-06T15:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T15:30:00+02:00",
+          "startTime": "2026-04-06T15:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T15:50:00+02:00",
+          "startTime": "2026-04-06T15:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T16:10:00+02:00",
+          "startTime": "2026-04-06T16:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T16:30:00+02:00",
+          "startTime": "2026-04-06T16:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T16:50:00+02:00",
+          "startTime": "2026-04-06T16:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T17:10:00+02:00",
+          "startTime": "2026-04-06T17:10:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T17:30:00+02:00",
+          "startTime": "2026-04-06T17:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T17:50:00+02:00",
+          "startTime": "2026-04-06T17:50:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-04-06T18:10:00+02:00",
+          "startTime": "2026-04-06T18:10:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-04-25T21:34:18Z"
+    },
+    {
+      "id": "c122d2e4-7fb7-4360-bb73-f0dc37a38179",
+      "name": "A Celebration in Arendelle",
+      "entityType": "SHOW",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2GS76",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T10:30:00+02:00",
+          "startTime": "2026-06-16T10:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:35:00+02:00",
+          "startTime": "2026-06-16T11:35:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:15:00+02:00",
+          "startTime": "2026-06-16T14:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:20:00+02:00",
+          "startTime": "2026-06-16T15:20:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "d944b02c-12ce-4176-ac62-6a936f180b5c",
+      "name": "Cars Quatre Roues Rallye",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA02",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 35
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:47:38Z"
+    },
+    {
+      "id": "8e229723-51c1-4668-b956-5bc45305acd9",
+      "name": "Les Tapis Volants - Flying Carpets Over Agrabah®",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA05",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 25
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:31:22Z"
+    },
+    {
+      "id": "a10b25e2-3176-449a-a8a5-4119902887bb",
+      "name": "Toy Soldiers Parachute Drop",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2XA07",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 55
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 15
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:42:48Z"
+    },
+    {
+      "id": "f710814b-232d-4469-aad7-d98b328a15b7",
+      "name": "Spider-Man W.E.B. Adventure",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2AC02",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 55
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 30
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1300,
+            "currency": "EUR",
+            "formatted": "13,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T15:05:00+02:00",
+          "returnStart": "2026-06-16T14:05:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:29Z"
+    },
+    {
+      "id": "25556e4e-aa6c-41ff-b196-29967362345e",
+      "name": "Raiponce Tangled Spin",
+      "entityType": "ATTRACTION",
+      "parkId": "ca888437-ebb4-4d50-aed2-d227f7096968",
+      "externalId": "P2DA00",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 35
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:55:00+02:00",
+          "returnStart": "2026-06-16T11:55:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:08Z"
+    }
+  ]
+}

@@ -1,0 +1,844 @@
+{
+  "id": "dae968d5-630d-4719-8b06-3d107e944401",
+  "name": "Disneyland Park",
+  "entityType": "PARK",
+  "timezone": "Europe/Paris",
+  "liveData": [
+    {
+      "id": "76e9e917-fe07-49d5-b604-f65d831210fa",
+      "name": "Pirate Galleon",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA08",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-04-25T21:34:18Z"
+    },
+    {
+      "id": "f0525c25-4ea2-49b7-aab5-150b27658fb6",
+      "name": "Orbitron®",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1DA07",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 40
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:45:57Z"
+    },
+    {
+      "id": "7c5b2c2d-1082-4e5c-b155-dc492db16e6e",
+      "name": "Peter Pan's Flight",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA10",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 55
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1300,
+            "currency": "EUR",
+            "formatted": "13,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T15:50:00+02:00",
+          "returnStart": "2026-06-16T14:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:08Z"
+    },
+    {
+      "id": "ddca340c-7ba1-4f23-89eb-0d3d52c84bda",
+      "name": "Star Wars Hyperspace Mountain",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1DA08",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 35
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 25
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1200,
+            "currency": "EUR",
+            "formatted": "12,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:45:57Z"
+    },
+    {
+      "id": "9056906c-0030-4951-be5e-44ac1f273491",
+      "name": "Le Pays des Contes de Fées, presented by Vittel",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA09",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 5
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:23:54Z"
+    },
+    {
+      "id": "7ff5d512-aed5-479a-8b3d-9bd1efb4177b",
+      "name": "Casey Jr. – le Petit Train du Cirque",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA03",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 10
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:42:48Z"
+    },
+    {
+      "id": "14f756d6-d6fa-4200-8b41-db84ba294fa6",
+      "name": "Phantom Manor",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RA03",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 30
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:45:57Z"
+    },
+    {
+      "id": "a970c245-4924-48bd-bced-efc14850b116",
+      "name": "Mickey’s PhilharMagic",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1G103",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:30:00+02:00",
+          "startTime": "2026-06-16T12:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:00:00+02:00",
+          "startTime": "2026-06-16T13:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:30:00+02:00",
+          "startTime": "2026-06-16T13:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:00:00+02:00",
+          "startTime": "2026-06-16T14:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:30:00+02:00",
+          "startTime": "2026-06-16T14:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:00:00+02:00",
+          "startTime": "2026-06-16T15:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:30:00+02:00",
+          "startTime": "2026-06-16T15:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:00:00+02:00",
+          "startTime": "2026-06-16T16:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:30:00+02:00",
+          "startTime": "2026-06-16T16:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:00:00+02:00",
+          "startTime": "2026-06-16T17:00:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:30:00+02:00",
+          "startTime": "2026-06-16T17:30:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "852d957c-382e-4afb-bb74-70c9a79055df",
+      "name": "Big Thunder Mountain",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RA00",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 45
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1300,
+            "currency": "EUR",
+            "formatted": "13,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T13:00:00+02:00",
+          "returnStart": "2026-06-16T12:00:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:08Z"
+    },
+    {
+      "id": "a5afa85c-ee58-4f47-8626-fa4057e7d266",
+      "name": "Disneyland Railroad Main Street Station",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1MA05",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-06-15T17:48:12Z"
+    },
+    {
+      "id": "a61aeee6-bed5-4890-8209-5249e689b1a1",
+      "name": "Liberty Arcade",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1MA03",
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:22Z"
+    },
+    {
+      "id": "83fa9e7f-4a25-4bee-8e61-4fb8c59cd350",
+      "name": "La Tanière du Dragon",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA12",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 0
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:21Z"
+    },
+    {
+      "id": "bcbd2214-0f75-4cae-8cff-087adf621330",
+      "name": "Rustler Roundup Shootin' Gallery",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RA05",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 0
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:21Z"
+    },
+    {
+      "id": "38bafc85-cb48-488e-aa68-3e2d01ae6a10",
+      "name": "La Galerie de la Belle au Bois Dormant",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA06",
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:22Z"
+    },
+    {
+      "id": "323bec06-fef7-4a60-989d-e3fcf9d3db7e",
+      "name": "Thunder Mesa Riverboat Landing",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RA06",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 20
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:22:52Z"
+    },
+    {
+      "id": "4e9e9271-1962-4fad-9f73-9370954018cf",
+      "name": "Reserved viewing area: Disney Tales of Magic",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RV00",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T22:50:00+02:00",
+          "startTime": "2026-06-16T22:50:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "435401f8-b158-4e2b-b3e1-d824d75570fc",
+      "name": "Reserved viewing area: Disney Stars on Parade",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RV01",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:30:00+02:00",
+          "startTime": "2026-06-16T11:30:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "d6c61231-8f9b-40fa-943a-fe1454e185e7",
+      "name": "Main Street Vehicles",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1MA04",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "DOWN",
+      "lastUpdated": "2026-06-16T08:36:11Z"
+    },
+    {
+      "id": "a620015d-091d-4f82-b8b2-a97bc8641f07",
+      "name": "Sleeping Beauty Castle",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA04",
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:22Z"
+    },
+    {
+      "id": "777518c2-1c65-48ba-94a1-e19583c44bf5",
+      "name": "Disney Stars on Parade",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1GS21",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T11:30:00+02:00",
+          "startTime": "2026-06-16T11:30:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:26Z"
+    },
+    {
+      "id": "0c1eb87d-1616-4ad1-9d29-0bbe70179ef3",
+      "name": "BDX Droid Mission: An Unexpected Encounter",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1G115",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-05-24T15:45:00+02:00",
+          "startTime": "2026-05-24T15:45:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-05-24T16:55:00+02:00",
+          "startTime": "2026-05-24T16:55:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-05-24T19:20:00+02:00",
+          "startTime": "2026-05-24T19:20:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-05-24T20:30:00+02:00",
+          "startTime": "2026-05-24T20:30:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-05-23T22:02:51Z"
+    },
+    {
+      "id": "d8d9f62a-9fa3-4aae-a568-4225afc35924",
+      "name": "Les Mystères du Nautilus",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1DA06",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 5
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T07:24:03Z"
+    },
+    {
+      "id": "63dfcdab-86c2-4185-99b1-5a353d81bb52",
+      "name": "Adventure Isle",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA00",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 0
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T07:31:23Z"
+    },
+    {
+      "id": "07782089-5e83-4bee-8a39-735818551844",
+      "name": "Le Passage Enchanté d'Aladdin",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA03",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 0
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T07:31:23Z"
+    },
+    {
+      "id": "53895b6d-d25d-4e08-a489-0c3d47dd183f",
+      "name": "Disneyland Railroad Frontierland Depot",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RA10",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-06-15T17:48:12Z"
+    },
+    {
+      "id": "0d9296c0-a76c-4578-b0f9-2ff4b4e385b5",
+      "name": "Disneyland Railroad Main Street Station",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1MA01",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-06-15T17:48:12Z"
+    },
+    {
+      "id": "03871aa6-a0b5-41ee-8fd3-b2f4b8dccc79",
+      "name": "Frontierland Playground",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1RA07",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 0
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T07:31:23Z"
+    },
+    {
+      "id": "2aa73e46-8dcf-4201-b334-db31e6e6ca06",
+      "name": "Pirates' Beach",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA05",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 0
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T07:31:23Z"
+    },
+    {
+      "id": "252b9b03-f770-4979-b3b2-f4ffecc3894d",
+      "name": "Alice's Curious Labyrinth",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA00",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-05-03T19:02:28Z"
+    },
+    {
+      "id": "594dabd8-ddc1-4835-aafa-f654e10ed2db",
+      "name": "Les Voyages de Pinocchio",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA13",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 15
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:42:48Z"
+    },
+    {
+      "id": "8ed1472a-4d2e-47f1-b848-353de0bc3670",
+      "name": "Blanche-Neige et les Sept Nains®",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA01",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-04-25T21:34:18Z"
+    },
+    {
+      "id": "78abb817-4564-41e2-b0de-fa0df34664c1",
+      "name": "The Lion King: Rhythms of the Pride Lands",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1GS34",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T12:30:00+02:00",
+          "startTime": "2026-06-16T12:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T13:30:00+02:00",
+          "startTime": "2026-06-16T13:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T16:05:00+02:00",
+          "startTime": "2026-06-16T16:05:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:05:00+02:00",
+          "startTime": "2026-06-16T17:05:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "7d0660a9-cc08-45c0-9ab7-2699f5369771",
+      "name": "Disney Tales of Magic",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1GS99",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T22:50:00+02:00",
+          "startTime": "2026-06-16T22:50:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "bcc5567f-f00b-4a7d-8ee6-526cc8d3d5de",
+      "name": "Mad Hatter's Tea Cups",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA08",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 5
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:42:48Z"
+    },
+    {
+      "id": "7d90d4e6-8c15-44ee-9e94-feb07788f02f",
+      "name": "Discovery Arcade",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1MA00",
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:21Z"
+    },
+    {
+      "id": "6bb88973-80d0-45cf-bffe-433f1c551362",
+      "name": "Horse-Drawn Streetcars",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1MA02",
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T06:30:22Z"
+    },
+    {
+      "id": "ced30c44-9b79-45de-a8c9-6347298756c1",
+      "name": "Le Carrousel de Lancelot",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA02",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 10
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:39:16Z"
+    },
+    {
+      "id": "46406e4a-4a02-4d30-89bc-ef1ed63c1ff9",
+      "name": "Dumbo the Flying Elephant",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA05",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 20
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:44:22Z"
+    },
+    {
+      "id": "0d822af0-bf02-47a7-bc29-672d2fa4f7ab",
+      "name": "Pirates of the Caribbean",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA04",
+      "queue": {
+        "STANDBY": {
+          "waitTime": null
+        }
+      },
+      "status": "CLOSED",
+      "lastUpdated": "2026-06-15T05:23:54Z"
+    },
+    {
+      "id": "74b4718b-cb55-4913-be95-5ec1c7d60b7b",
+      "name": "A Million Splashes of Colour",
+      "entityType": "SHOW",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1GS86",
+      "status": "OPERATING",
+      "showtimes": [
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T14:15:00+02:00",
+          "startTime": "2026-06-16T14:15:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T15:30:00+02:00",
+          "startTime": "2026-06-16T15:30:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T17:55:00+02:00",
+          "startTime": "2026-06-16T17:55:00+02:00"
+        },
+        {
+          "type": "Performance Time",
+          "endTime": "2026-06-16T19:10:00+02:00",
+          "startTime": "2026-06-16T19:10:00+02:00"
+        }
+      ],
+      "lastUpdated": "2026-06-15T22:01:27Z"
+    },
+    {
+      "id": "5d0ce227-7ad0-4402-a95b-6cf56f25a8ec",
+      "name": "Indiana Jones™ and the Temple of Peril",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA02",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 35
+        },
+        "SINGLE_RIDER": {
+          "waitTime": 10
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:45:57Z"
+    },
+    {
+      "id": "3a1cd3f7-9c42-4f9b-90fa-dab7ba113862",
+      "name": "Autopia, presented by Avis",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1DA03",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 30
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:55:00+02:00",
+          "returnStart": "2026-06-16T11:55:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:49:29Z"
+    },
+    {
+      "id": "7e426533-7727-47e5-8c8e-0dcd46198e57",
+      "name": "La Cabane des Robinson",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1AA01",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 5
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T07:27:10Z"
+    },
+    {
+      "id": "03992704-698d-474b-a721-a5ac3498edb9",
+      "name": "Buzz Lightyear Laser Blast",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1DA04",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 20
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 1200,
+            "currency": "EUR",
+            "formatted": "12,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:47:38Z"
+    },
+    {
+      "id": "5d10b8b2-7d34-4794-8857-76688e5864bc",
+      "name": "Star Tours: The Adventures Continue*",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1DA09",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 30
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:45:57Z"
+    },
+    {
+      "id": "ce87a0fe-c644-475e-abb6-9727e05cebff",
+      "name": "\"it's a small world\"",
+      "entityType": "ATTRACTION",
+      "parkId": "dae968d5-630d-4719-8b06-3d107e944401",
+      "externalId": "P1NA07",
+      "queue": {
+        "STANDBY": {
+          "waitTime": 10
+        },
+        "PAID_RETURN_TIME": {
+          "price": {
+            "amount": 500,
+            "currency": "EUR",
+            "formatted": "5,00 €"
+          },
+          "state": "AVAILABLE",
+          "returnEnd": "2026-06-16T12:50:00+02:00",
+          "returnStart": "2026-06-16T11:50:00+02:00"
+        }
+      },
+      "status": "OPERATING",
+      "lastUpdated": "2026-06-16T09:45:57Z"
+    }
+  ]
+}
