@@ -64,13 +64,23 @@ st.set_page_config(
 def get_db_connection():
     """
     Crea e cache-a la connessione al database.
-    Legge DATABASE_URL dal file .env locale.
+    Supporta sia .env locale che Streamlit Cloud secrets.
     """
-    database_url = os.environ.get("DATABASE_URL")
+    # Prima prova Streamlit secrets (per Streamlit Cloud)
+    database_url = None
+    try:
+        database_url = st.secrets["DATABASE_URL"]
+    except (KeyError, FileNotFoundError):
+        pass
+    
+    # Fallback su variabile d'ambiente (per uso locale)
+    if not database_url:
+        database_url = os.environ.get("DATABASE_URL")
+    
     if not database_url:
         st.error(
             "⚠️ Variabile DATABASE_URL non trovata. "
-            "Assicurati di avere un file .env con DATABASE_URL configurato."
+            "Configura i secrets su Streamlit Cloud o il file .env in locale."
         )
         st.stop()
     

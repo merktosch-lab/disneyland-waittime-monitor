@@ -1,6 +1,9 @@
 # Variabili d'ambiente (contiene credenziali DB)
 .env
 
+# Streamlit secrets (contiene credenziali)
+.streamlit/secrets.toml
+
 # Python
 __pycache__/
 *.pyc
