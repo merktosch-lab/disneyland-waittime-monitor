@@ -62,6 +62,9 @@ def get_connection():
         try:
             _connection = psycopg2.connect(database_url)
             _connection.autocommit = True
+            # Imposta timezone sessione a Europe/Paris per vedere orari locali
+            with _connection.cursor() as cur:
+                cur.execute("SET timezone = 'Europe/Paris';")
             logger.info(f"Connessione al database stabilita (tentativo {attempt})")
             return _connection
         except OperationalError as e:
@@ -98,6 +101,9 @@ def ensure_schema():
     """
     conn = get_connection()
     with conn.cursor() as cur:
+        # Imposta timezone della sessione a Europe/Paris
+        cur.execute("SET timezone = 'Europe/Paris';")
+        
         # Tabella principale per le ATTRACTION
         cur.execute("""
             CREATE TABLE IF NOT EXISTS wait_times (

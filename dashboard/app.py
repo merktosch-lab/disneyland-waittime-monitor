@@ -91,6 +91,9 @@ def get_db_connection():
     try:
         conn = psycopg2.connect(database_url)
         conn.autocommit = True
+        # Mostra tutti gli orari in Europe/Paris
+        with conn.cursor() as cur:
+            cur.execute("SET timezone = 'Europe/Paris';")
         return conn
     except Exception as e:
         st.error(f"❌ Impossibile connettersi al database: {e}")
