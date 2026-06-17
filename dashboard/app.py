@@ -380,34 +380,22 @@ def main():
             if not df_slots.empty:
                 import plotly.graph_objects as go
                 
-                fig_slots = go.Figure()
-                fig_slots.add_trace(go.Bar(
-                    x=df_slots["ora_acquisto"],
-                    y=df_slots["return_hour_media"],
-                    name="Ora return media",
-                    marker_color="#9B59B6",
-                    text=[f"{int(h)}:00" for h in df_slots["return_hour_media"]],
-                    textposition="outside"
-                ))
-                fig_slots.update_layout(
-                    title=f"Se compri il PA a quest'ora → entri a quest'ora — {selected_name}",
-                    xaxis_title="Ora di acquisto",
-                    yaxis_title="Ora di ritorno (media)",
-                    xaxis=dict(dtick=1),
-                    yaxis=dict(dtick=1)
-                )
-                st.plotly_chart(fig_slots, use_container_width=True, key="chart_pa_slots")
+                # Tabella dettagliata — più chiara di un grafico per orari
+                st.markdown("**Se compri il Premier Access a quest'ora, ti assegnano questo slot:**")
                 
-                # Tabella dettagliata
                 df_slots_display = df_slots.copy()
-                df_slots_display["prezzo_medio"] = (df_slots_display["prezzo_medio"] / 100).round(2)
+                df_slots_display["prezzo_euro"] = (df_slots_display["prezzo_medio"] / 100).round(2)
+                df_slots_display["slot_assegnato"] = (
+                    df_slots_display["return_start_medio"] + " – " + df_slots_display["return_end_medio"]
+                )
+                
                 st.dataframe(
-                    df_slots_display.rename(columns={
+                    df_slots_display[["ora_acquisto", "slot_assegnato", "return_start_min", "return_start_max", "prezzo_euro", "campionamenti"]].rename(columns={
                         "ora_acquisto": "Ora acquisto",
-                        "return_hour_media": "Return ora (media)",
-                        "return_hour_min": "Return più presto",
-                        "return_hour_max": "Return più tardi",
-                        "prezzo_medio": "Prezzo (€)",
+                        "slot_assegnato": "Slot assegnato (media)",
+                        "return_start_min": "Slot più presto",
+                        "return_start_max": "Slot più tardi",
+                        "prezzo_euro": "Prezzo (€)",
                         "campionamenti": "Campionamenti"
                     }),
                     use_container_width=True, hide_index=True
@@ -415,7 +403,7 @@ def main():
                 
                 st.caption(
                     "💡 Più presto compri, prima è lo slot assegnato. "
-                    "Se lo slot mostra ore tardi (es. 20:00), i PA delle ore precedenti sono già esauriti."
+                    "Se lo slot mostra ore tardi (es. 21:00), i PA delle ore precedenti sono già esauriti."
                 )
             else:
                 st.info("Dati return slot non ancora disponibili. Attendi più campionamenti.")

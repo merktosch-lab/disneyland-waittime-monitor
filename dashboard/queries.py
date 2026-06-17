@@ -311,17 +311,19 @@ def get_premier_access_availability(conn, attraction_id: str, date_range=None) -
 def get_premier_access_return_slots(conn, attraction_id: str, date_range=None) -> pd.DataFrame:
     """
     Mostra la fascia oraria del return time offerta per ogni ora di acquisto.
-    Es: "Se compro alle 9:00, mi danno slot 14:00-15:00"
-        "Se compro alle 12:00, mi danno slot 19:00-20:00"
+    Es: "Se compro alle 9:00, mi danno slot 14:30-15:30"
+        "Se compro alle 12:00, mi danno slot 19:10-20:10"
     
     Fondamentale per pianificare quando prenotare.
+    Mostra ora:minuti completa, non solo l'ora.
     """
     query = """
         SELECT 
             hour_of_day as ora_acquisto,
-            ROUND(AVG(EXTRACT(HOUR FROM premier_access_return_start))) as return_hour_media,
-            MIN(EXTRACT(HOUR FROM premier_access_return_start)) as return_hour_min,
-            MAX(EXTRACT(HOUR FROM premier_access_return_start)) as return_hour_max,
+            TO_CHAR(AVG(premier_access_return_start::time), 'HH24:MI') as return_start_medio,
+            TO_CHAR(MIN(premier_access_return_start::time), 'HH24:MI') as return_start_min,
+            TO_CHAR(MAX(premier_access_return_start::time), 'HH24:MI') as return_start_max,
+            TO_CHAR(AVG(premier_access_return_end::time), 'HH24:MI') as return_end_medio,
             ROUND(AVG(premier_access_price)) as prezzo_medio,
             COUNT(*) as campionamenti
         FROM wait_times
