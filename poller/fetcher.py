@@ -88,14 +88,20 @@ def parse_attraction(live_data: dict, attraction_id: str, park_name: str) -> dic
             # Prezzo Premier Access (PAID_RETURN_TIME)
             premier_access_price = None
             premier_access_currency = None
+            premier_access_state = None
+            premier_access_return_start = None
+            premier_access_return_end = None
             if status == "OPERATING":
                 queue = entity.get("queue", {})
                 paid_return = queue.get("PAID_RETURN_TIME", {})
+                premier_access_state = paid_return.get("state")  # AVAILABLE, FINISHED, etc.
                 price_info = paid_return.get("price", {})
                 if price_info:
-                    # Il prezzo è in centesimi (es. 1300 = 13.00€)
                     premier_access_price = price_info.get("amount")
                     premier_access_currency = price_info.get("currency")
+                # Orari del return time (fascia oraria prenotata)
+                premier_access_return_start = paid_return.get("returnStart")
+                premier_access_return_end = paid_return.get("returnEnd")
             
             return {
                 "attraction_id": attraction_id,
@@ -107,6 +113,9 @@ def parse_attraction(live_data: dict, attraction_id: str, park_name: str) -> dic
                 "single_rider_minutes": single_rider_minutes,
                 "premier_access_price": premier_access_price,
                 "premier_access_currency": premier_access_currency,
+                "premier_access_state": premier_access_state,
+                "premier_access_return_start": premier_access_return_start,
+                "premier_access_return_end": premier_access_return_end,
                 "status": status
             }
     

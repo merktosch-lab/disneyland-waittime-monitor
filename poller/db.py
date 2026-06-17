@@ -111,6 +111,9 @@ def ensure_schema():
                 single_rider_minutes INTEGER,
                 premier_access_price INTEGER,
                 premier_access_currency VARCHAR(10),
+                premier_access_state VARCHAR(50),
+                premier_access_return_start TIMESTAMPTZ,
+                premier_access_return_end TIMESTAMPTZ,
                 status          VARCHAR(50),
                 sampled_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
                 day_of_week     SMALLINT,
@@ -161,6 +164,19 @@ def ensure_schema():
         cur.execute("CREATE INDEX IF NOT EXISTS idx_show_changes_detected ON show_changes(detected_at);")
     
     logger.info("Schema database verificato/creato con successo")
+    
+    # Migration: aggiunge colonne mancanti (per DB già esistenti)
+    with conn.cursor() as cur:
+        migrations = [
+            "ALTER TABLE wait_times ADD COLUMN IF NOT EXISTS premier_access_state VARCHAR(50);",
+            "ALTER TABLE wait_times ADD COLUMN IF NOT EXISTS premier_access_return_start TIMESTAMPTZ;",
+            "ALTER TABLE wait_times ADD COLUMN IF NOT EXISTS premier_access_return_end TIMESTAMPTZ;",
+        ]
+        for sql in migrations:
+            try:
+                cur.execute(sql)
+            except Exception:
+                pass  # Colonna già esiste o DB non supporta IF NOT EXISTS
 
 
 def insert_wait_time(record: dict):
@@ -173,13 +189,29 @@ def insert_wait_time(record: dict):
     day_of_week = now_paris.weekday()
     hour_of_day = now_paris.hour
     
+    # Parsing degli orari return Premier Access (ISO → datetime)
+    pa_return_start = None
+    pa_return_end = None
+    if record.get("premier_access_return_start"):
+        try:
+            pa_return_start = datetime.fromisoformat(record["premier_access_return_start"])
+        except (ValueError, TypeError):
+            pass
+    if record.get("premier_access_return_end"):
+        try:
+            pa_return_end = datetime.fromisoformat(record["premier_access_return_end"])
+        except (ValueError, TypeError):
+            pass
+    
     with conn.cursor() as cur:
         cur.execute("""
             INSERT INTO wait_times 
                 (attraction_id, attraction_name, entity_type, park, external_id,
                  wait_minutes, single_rider_minutes, premier_access_price, 
-                 premier_access_currency, status, sampled_at, day_of_week, hour_of_day)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                 premier_access_currency, premier_access_state,
+                 premier_access_return_start, premier_access_return_end,
+                 status, sampled_at, day_of_week, hour_of_day)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
             record["attraction_id"],
             record["attraction_name"],
@@ -190,6 +222,9 @@ def insert_wait_time(record: dict):
             record.get("single_rider_minutes"),
             record.get("premier_access_price"),
             record.get("premier_access_currency"),
+            record.get("premier_access_state"),
+            pa_return_start,
+            pa_return_end,
             record.get("status"),
             now_paris,
             day_of_week,

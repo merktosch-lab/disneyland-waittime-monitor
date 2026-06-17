@@ -29,6 +29,7 @@ from queries import (
     get_comparison_data,
     get_single_rider_by_hour,
     get_premier_access_stats,
+    get_premier_access_return_slots,
     get_single_rider_comparison,
     get_shows_list,
     get_show_times_by_name,
@@ -365,6 +366,59 @@ def main():
                 )
             else:
                 st.info(f"'{selected_name}' non offre Premier Access o dati non disponibili.")
+            
+            st.divider()
+            
+            # --- Premier Access: Analisi Return Slot ---
+            st.subheader(f"🎯 Premier Access Return Slot — {selected_name}")
+            st.markdown(
+                "Mostra **quale fascia oraria ti viene assegnata** in base a quando acquisti il Premier Access. "
+                "Es: se compri alle 9:00, a che ora potrai entrare?"
+            )
+            
+            df_slots = get_premier_access_return_slots(conn, selected_id, date_range=date_range)
+            if not df_slots.empty:
+                import plotly.graph_objects as go
+                
+                fig_slots = go.Figure()
+                fig_slots.add_trace(go.Bar(
+                    x=df_slots["ora_acquisto"],
+                    y=df_slots["return_hour_media"],
+                    name="Ora return media",
+                    marker_color="#9B59B6",
+                    text=[f"{int(h)}:00" for h in df_slots["return_hour_media"]],
+                    textposition="outside"
+                ))
+                fig_slots.update_layout(
+                    title=f"Se compri il PA a quest'ora → entri a quest'ora — {selected_name}",
+                    xaxis_title="Ora di acquisto",
+                    yaxis_title="Ora di ritorno (media)",
+                    xaxis=dict(dtick=1),
+                    yaxis=dict(dtick=1)
+                )
+                st.plotly_chart(fig_slots, use_container_width=True, key="chart_pa_slots")
+                
+                # Tabella dettagliata
+                df_slots_display = df_slots.copy()
+                df_slots_display["prezzo_medio"] = (df_slots_display["prezzo_medio"] / 100).round(2)
+                st.dataframe(
+                    df_slots_display.rename(columns={
+                        "ora_acquisto": "Ora acquisto",
+                        "return_hour_media": "Return ora (media)",
+                        "return_hour_min": "Return più presto",
+                        "return_hour_max": "Return più tardi",
+                        "prezzo_medio": "Prezzo (€)",
+                        "campionamenti": "Campionamenti"
+                    }),
+                    use_container_width=True, hide_index=True
+                )
+                
+                st.caption(
+                    "💡 Più presto compri, prima è lo slot assegnato. "
+                    "Se lo slot mostra ore tardi (es. 20:00), i PA delle ore precedenti sono già esauriti."
+                )
+            else:
+                st.info("Dati return slot non ancora disponibili. Attendi più campionamenti.")
     
     # ===== TAB 6: PLANNER GIORNALIERO =====
     with tab6:

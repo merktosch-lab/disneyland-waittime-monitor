@@ -277,6 +277,70 @@ def get_premier_access_stats(conn, attraction_id: str, date_range=None) -> pd.Da
     return pd.read_sql(query, conn, params=params)
 
 
+def get_premier_access_availability(conn, attraction_id: str, date_range=None) -> pd.DataFrame:
+    """
+    Analisi disponibilità Premier Access nel tempo:
+    - A che ora del giorno sono ancora AVAILABLE
+    - A che ora diventano FINISHED (esauriti)
+    - Fascia oraria media del return time offerto per ogni ora di campionamento
+    
+    Utile per capire: "se compro il PA alle 9, che fascia oraria mi danno?"
+    """
+    query = """
+        SELECT 
+            hour_of_day,
+            premier_access_state,
+            COUNT(*) as occurrences,
+            ROUND(AVG(EXTRACT(HOUR FROM premier_access_return_start))) as avg_return_hour
+        FROM wait_times
+        WHERE attraction_id = %s 
+          AND status = 'OPERATING'
+          AND premier_access_state IS NOT NULL
+    """
+    params = [attraction_id]
+    
+    if date_range is not None:
+        query += " AND sampled_at >= %s AND sampled_at <= %s"
+        params.extend(date_range)
+    
+    query += " GROUP BY hour_of_day, premier_access_state ORDER BY hour_of_day;"
+    
+    return pd.read_sql(query, conn, params=params)
+
+
+def get_premier_access_return_slots(conn, attraction_id: str, date_range=None) -> pd.DataFrame:
+    """
+    Mostra la fascia oraria del return time offerta per ogni ora di acquisto.
+    Es: "Se compro alle 9:00, mi danno slot 14:00-15:00"
+        "Se compro alle 12:00, mi danno slot 19:00-20:00"
+    
+    Fondamentale per pianificare quando prenotare.
+    """
+    query = """
+        SELECT 
+            hour_of_day as ora_acquisto,
+            ROUND(AVG(EXTRACT(HOUR FROM premier_access_return_start))) as return_hour_media,
+            MIN(EXTRACT(HOUR FROM premier_access_return_start)) as return_hour_min,
+            MAX(EXTRACT(HOUR FROM premier_access_return_start)) as return_hour_max,
+            ROUND(AVG(premier_access_price)) as prezzo_medio,
+            COUNT(*) as campionamenti
+        FROM wait_times
+        WHERE attraction_id = %s 
+          AND status = 'OPERATING'
+          AND premier_access_state = 'AVAILABLE'
+          AND premier_access_return_start IS NOT NULL
+    """
+    params = [attraction_id]
+    
+    if date_range is not None:
+        query += " AND sampled_at >= %s AND sampled_at <= %s"
+        params.extend(date_range)
+    
+    query += " GROUP BY hour_of_day ORDER BY hour_of_day;"
+    
+    return pd.read_sql(query, conn, params=params)
+
+
 def get_single_rider_comparison(conn, date_range=None) -> pd.DataFrame:
     """
     Confronto risparmio Single Rider vs Standby per tutte le attrazioni
