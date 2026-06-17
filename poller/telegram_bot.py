@@ -256,6 +256,7 @@ def start_bot():
     """
     Avvia il bot Telegram in un thread separato.
     Se TELEGRAM_BOT_TOKEN non è configurato, non fa nulla.
+    Usa un event loop dedicato per evitare il problema set_wakeup_fd.
     """
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     if not token:
@@ -266,8 +267,13 @@ def start_bot():
     load_disabled_ids()
     
     def run_bot():
-        """Funzione che gira nel thread del bot."""
+        """Funzione che gira nel thread del bot con event loop dedicato."""
+        import asyncio
+        
         try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            
             app = Application.builder().token(token).build()
             
             # Registra i comandi
@@ -277,7 +283,12 @@ def start_bot():
             app.add_handler(CallbackQueryHandler(callback_best, pattern="^best:"))
             
             logger.info("Bot Telegram avviato — comandi: /now, /best")
-            app.run_polling(drop_pending_updates=True)
+            
+            # Avvia manualmente senza signal handlers
+            loop.run_until_complete(app.initialize())
+            loop.run_until_complete(app.updater.start_polling(drop_pending_updates=True))
+            loop.run_until_complete(app.start())
+            loop.run_forever()
         except Exception as e:
             logger.error(f"Errore nel bot Telegram: {e}", exc_info=True)
     
