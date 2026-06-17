@@ -33,6 +33,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger("poller")
 
+# Riduci il log verboso di httpx (polling Telegram)
+logging.getLogger("httpx").setLevel(logging.WARNING)
+
 # Intervallo tra i cicli di polling (30 minuti in secondi)
 POLLING_INTERVAL = 30 * 60  # 1800 secondi
 
