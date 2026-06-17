@@ -22,6 +22,7 @@ load_dotenv(Path(__file__).parent.parent / ".env")
 from fetcher import get_live_data, parse_attraction, parse_show
 from db import ensure_schema, insert_wait_time, insert_show_schedule, get_connection
 from alerts import check_and_alert, send_cycle_summary
+from telegram_bot import start_bot
 
 # Configurazione logging — stdout per Railway
 logging.basicConfig(
@@ -41,6 +42,7 @@ def load_parks() -> list:
     Carica tutti i file JSON dalla cartella 'parks/'.
     Ogni file rappresenta un parco con le sue entity nel formato API themeparks.wiki.
     Separa le entity in ATTRACTION e SHOW per processarle diversamente.
+    Esclude le entity elencate in disabled.json.
     
     Returns:
         Lista di dizionari con: park_id, park_name, attraction_ids, show_ids
@@ -51,8 +53,28 @@ def load_parks() -> list:
         logger.error(f"Cartella parks/ non trovata in {parks_dir}")
         return []
     
+    # Carica la lista degli ID disabilitati
+    disabled_ids = set()
+    disabled_file = parks_dir / "disabled.json"
+    if disabled_file.exists():
+        try:
+            with open(disabled_file, "r", encoding="utf-8") as f:
+                disabled_data = json.load(f)
+            # Formato: entities con campo "enabled": true/false
+            for entity in disabled_data.get("entities", []):
+                if not entity.get("enabled", True):
+                    disabled_ids.add(entity["id"])
+            if disabled_ids:
+                logger.info(f"Escluse {len(disabled_ids)} entity dal polling (enabled=false)")
+        except Exception as e:
+            logger.warning(f"Errore nel caricamento disabled.json: {e}")
+    
     parks = []
     for json_file in sorted(parks_dir.glob("*.json")):
+        # Salta il file disabled.json
+        if json_file.name == "disabled.json":
+            continue
+        
         try:
             with open(json_file, "r", encoding="utf-8") as f:
                 park_data = json.load(f)
@@ -60,15 +82,18 @@ def load_parks() -> list:
             park_id = park_data["id"]
             park_name = park_data["name"]
             
-            # Separiamo ATTRACTION da SHOW
+            # Separiamo ATTRACTION da SHOW, escludendo i disabled
             attraction_ids = []
             show_ids = []
             for entity in park_data.get("liveData", []):
+                entity_id = entity["id"]
+                if entity_id in disabled_ids:
+                    continue
                 entity_type = entity.get("entityType", "ATTRACTION")
                 if entity_type == "SHOW":
-                    show_ids.append(entity["id"])
+                    show_ids.append(entity_id)
                 else:
-                    attraction_ids.append(entity["id"])
+                    attraction_ids.append(entity_id)
             
             parks.append({
                 "park_id": park_id,
@@ -171,6 +196,9 @@ def main():
     logger.info("=" * 60)
     logger.info("Avvio Disneyland Paris Wait Time Monitor — Poller")
     logger.info("=" * 60)
+    
+    # Avvia il bot Telegram in background (se configurato)
+    start_bot()
     
     # Carica la configurazione di tutti i parchi dalla cartella parks/
     parks = load_parks()
